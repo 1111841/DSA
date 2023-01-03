@@ -1,0 +1,7 @@
+Sum function with condition:
+sum(1 if x[1]=="+" else -1 for x in operations)
+
+Sum function with lambda:
+res = sum(list(filter(lambda x: x % 2 != 0, test_list)))
+# printing result
+print("The sum of odd elements: " + str(res))
