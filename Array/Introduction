@@ -1,1 +1,71 @@
+1. Arrays 
+An array is defined as a fixed-size collection of elements of the same data type stored in
+contiguous memory locations. It is the simplest data structure where each element of the array can be accessed using its index.
+
+Properties of Arrays
+● Each element of the array is of the same data type and the same size.
+● The elements of the array are accessed by using their index. The index of the first element is always 0. Thus, the index of an array of size N ranges from 0 to N–1.
+
+Array Operations:
+
+•	Traversal
+•	Insertion
+•	Deletion
+•	Searching
+Insertion:
+
+Insert an element in array, here we can use append function as well
+
+def array_insertion (arr, pos, ele):
+    arr[pos]=ele
+    return arr
+arr = [int(item) for item in input("Enter the list items : ").split()]
+ele=int(input("Enter the element which u want to insert in array:"))
+pos=int(input("Enter the position where u want to insert:"))
+print(array_insertion(arr,pos,ele))
+
+
+Deletion: Delete an element in array by using pop method
+
+def array_deletion(arr,pos):
+    arr.pop(pos)
+    arr.pop()
+    return arr
+arr = [int(item) for item in input("Enter the list items : ").split()]
+print(arr)
+pos=int(input("Enter the position where u want to delete:"))
+print(array_deletion(arr,pos))
+
+
+Searching:
+
+There are two types of searching in array.
+•	Linear Search
+•	Binary Search
+This thing we discussed another document.
+
+
+Traversal:
+
+def array_traversal(arr):
+    print("print without using indexing")
+    for i in arr:
+        print(i)
+    print("print by using indexing")
+    for i in range(0,len(arr)):
+        print(arr[i])
+arr=list(map(int,input("Enter the value in array").split(" ")))
+array_traversal(arr)
+
+Concatenation Of an array:
+
+If you want to do concatenation in array, you can do by two ways
+
+def array_concatenation(arr):
+    print("first Method")
+    return arr+arr
+    print("second Method")
+    return arr*2   
+arr=list(map(int,input("Enter the value in array").split(" ")))
+array_concatenation(arr)
 
