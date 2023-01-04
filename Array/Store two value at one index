@@ -1,0 +1,25 @@
+/* How to store two value at one index */
+
+Here by using remainder,divison and multiplied by the maximum number
+n--> half length of array
+
+for i in range(0,n):
+  nums[i+n]+=nums[i]*10000
+for i in range(0,n):
+   nums[2*i]=nums[i+n]//10000
+   nums[2*i+1]=nums[i+n]%10000
+return nums
+
+
+/* Another Approach */
+By using bitwise operator
+
+for i in range(0,n):
+   nums[i+n]<<=10
+   nums[i+n]|=nums[i]
+for i in range(0,n):
+   n1 = nums[i+n]&1023
+   n2 = nums[i+n]>>10
+   nums[2*i] = n1
+   nums[2*i+1] = n2
+return nums
