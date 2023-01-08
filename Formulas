@@ -2,6 +2,7 @@ Reverse Function of XOR is ^.
 
 Encoded[i]=arr[i] XOR arr[i+1]
 then 
+before decoding you have to provide some value at zero index.
 arr[i](decoded value)=Encoded[i]^arr[i]
 
 https://leetcode.com/problems/decode-xored-array/description/
