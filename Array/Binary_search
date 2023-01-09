@@ -1,0 +1,28 @@
+def Binary_search(arr,ele):
+   start=0
+   end=len(arr)-1
+   while(start<=end):
+     mid=(start+end)//2      ### start+(end-start)//2
+     if(arr[mid]==ele):
+        return mid      ## index number of that ele
+     elif(arr[mid]>ele):
+         end=mid-1
+     else:
+        start=mid+1
+        
+arr=list(map(int,input("enter the value in array").split(" ")))
+ele=int(input("enter the target element")
+print(Binary_search(arr,ele))
+
+
+Time Complexity of Binary_search: o(log(n))
+
+Tips & Tricks:
+
+If given array is in sorted order then firstly think about binary search used in this problem
+
+Pseudocode:
+a) Firstly array is in sorted order
+b) Take two variable   start=0 and end=len(arr)-1
+c) find mid of element till start<=end
+d) check id mid equals to target then return else id mid < target then start=mid+1 otherwise end=mid-1
