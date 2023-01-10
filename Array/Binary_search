@@ -26,3 +26,50 @@ a) Firstly array is in sorted order
 b) Take two variable   start=0 and end=len(arr)-1
 c) find mid of element till start<=end
 d) check id mid equals to target then return else id mid < target then start=mid+1 otherwise end=mid-1
+
+Problem: https://leetcode.com/problems/find-target-indices-after-sorting-array/submissions/875640386/
+class Solution:
+    def first_occurence(self, arr: List[int], target: int):
+        arr=sorted(arr)
+        res=-1
+        start=0
+        end=len(arr)-1
+        while(start<=end):
+            mid=start+(end-start)//2
+            if(arr[mid]==target):
+                res=mid
+                end=mid-1
+            elif(arr[mid]>target):
+                end=mid-1
+            else: 
+                start=mid+1
+        return res
+
+    def last_occurence(self, arr: List[int], target: int):
+        arr=sorted(arr)
+        res=-1
+        start=0
+        end=len(arr)-1
+        while(start<=end):
+            mid=start+(end-start)//2
+            if(arr[mid]==target):
+                res=mid
+                start=mid+1
+            elif(arr[mid]>target):
+                end=mid-1
+            else: 
+                start=mid+1
+        return res
+
+    def targetIndices(self, arr: List[int], target: int) -> List[int]:
+        ans=[]
+        arr=sorted(arr)
+        l= self.first_occurence(arr,target)
+        r= self.last_occurence(arr,target)
+        if(l!=-1 and r!=-1):
+            for i in range(l,r+1):
+                ans.append(i)
+        return ans
+
+
+    
